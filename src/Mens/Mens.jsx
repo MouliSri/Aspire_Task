@@ -9,7 +9,7 @@ import MensData from './MensData';
 import $ from "jquery"
 
 
-const Mens = (AddToCart) => {
+const Mens = () => {
 
 
   useEffect(()=>{
@@ -41,7 +41,7 @@ const Mens = (AddToCart) => {
         <div className='cards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden  '>
           
         {
-        MensData.map((data)=><Card Data={data} AddToCart={AddToCart}/>)
+        MensData.map((data)=><Card Data={data} />)
         }
         
       </div>

@@ -9,6 +9,7 @@ import child6 from "../images/child6.png"
 const kidsData=[
    {
       "clothId":1,
+      "clothName":"child1",
        "clothImage":child1,
        "clothRating":"4",
        "clothPrice":"800"
@@ -16,6 +17,7 @@ const kidsData=[
     },
     {
        "clothId":2,
+       "clothName":"child2",
         "clothImage":child2,
         "clothRating":"5",
         "clothPrice":"900"
@@ -23,6 +25,7 @@ const kidsData=[
      },
      {
       "clothId":3,
+      "clothName":"child3",
         "clothImage":child3,
         "clothRating":"3",
         "clothPrice":"800"
@@ -30,6 +33,7 @@ const kidsData=[
      },
      {
       "clothId":4,
+      "clothName":"child4",
         "clothImage":child4,
         "clothRating":"4",
         "clothPrice":"500"
@@ -37,6 +41,7 @@ const kidsData=[
      },
      {
       "clothId":5,
+      "clothName":"child5",
         "clothImage":child5,
         "clothRating":"5",
         "clothPrice":"1000"
@@ -44,6 +49,7 @@ const kidsData=[
      },
      {
       "clothId":6,
+      "clothName":"child6",
         "clothImage":child6,
         "clothRating":"5",
         "clothPrice":"1000"

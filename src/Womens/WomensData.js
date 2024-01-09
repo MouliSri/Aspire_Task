@@ -10,6 +10,7 @@ import Women5 from "../images/dress6.png"
 const WomensData=[
    {
       "clothId":1,
+      "clothName":"Women1",
        "clothImage":Women1,
        "clothRating":"4",
        "clothPrice":"800"
@@ -17,6 +18,7 @@ const WomensData=[
     },
     {
        "clothId":2,
+       "clothName":"Women2",
         "clothImage":Women2,
         "clothRating":"5",
         "clothPrice":"900"
@@ -24,6 +26,7 @@ const WomensData=[
      },
      {
       "clothId":3,
+      "clothName":"Women3",
         "clothImage":Women3,
         "clothRating":"3",
         "clothPrice":"800"
@@ -31,6 +34,7 @@ const WomensData=[
      },
      {
       "clothId":4,
+      "clothName":"Women4",
         "clothImage":Women4,
         "clothRating":"3",
         "clothPrice":"800"
@@ -38,6 +42,7 @@ const WomensData=[
      },
      {
       "clothId":5,
+      "clothName":"Women5",
         "clothImage":Women5,
         "clothRating":"3",
         "clothPrice":"800"

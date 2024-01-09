@@ -1,4 +1,4 @@
-import React,{useState} from "react";
+import React from "react";
 
 
 import { Navbar } from "./Components/Navbar";
@@ -18,14 +18,7 @@ import Login from  "./Login/Login.jsx"
 
 
 function App() {
-  const [CartItems,setCartItems]=useState([]);
-
-
-    const AddToCart=(item)=>{
-      console.log(item);
-      setCartItems(...item);
-     
-    }
+  
    
 
     
@@ -40,11 +33,11 @@ function App() {
       
   
     <Route   index element={<Home />} />
-    <Route   path='/Cart' element={<Cart  CartItems={CartItems}/>} />
-    <Route   path='/Mens' element={<Mens  AddToCart={AddToCart}/>} />
-    <Route   path='/Womens' element={<Womens AddToCart={AddToCart}/>} />
-    <Route   path='/Kids' element={<Kids AddToCart={AddToCart}/>} />
-    <Route   path='/Products' element={<Products AddToCart={AddToCart}/>} />
+    <Route   path='/Cart' element={<Cart />} />
+    <Route   path='/Mens' element={<Mens  />} />
+    <Route   path='/Womens' element={<Womens />} />
+    <Route   path='/Kids' element={<Kids />} />
+    <Route   path='/Products' element={<Products />} />
     <Route   path='/Track' element={<Track/>} />
     <Route   path='/Liked' element={<Liked/>} />
     <Route exact path='/Login' element={<Login />} />

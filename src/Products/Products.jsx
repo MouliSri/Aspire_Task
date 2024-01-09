@@ -7,7 +7,7 @@ import {BsFilter} from "react-icons/bs"
 import Card from "../Components/Card"
 
 
-const Products = ({AddToCart}) => {
+const Products = () => {
 
   // const [AllProducts,setAllProducts]=useState([]);
 
@@ -38,7 +38,7 @@ const Products = ({AddToCart}) => {
         <div className=' grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden  '>
           
         {
-        AllProducts.map((x)=><Card Data={x} AddToCart={AddToCart}/>)
+        AllProducts.map((x)=><Card Data={x} />)
         }
         
       </div>

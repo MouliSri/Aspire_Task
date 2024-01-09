@@ -11,13 +11,73 @@ const Login = () => {
     const [login,setLogin]=useState(true);
     const navigate = useNavigate();
 
+    const [username, setUsername] = useState('');
+    const [password, setPassword] = useState('');
+    const [email, setEmail] = useState('');
+
     const handleClick=()=>{
         setLogin(!login);
     }
 
+
     const navigateHome = () => {
-        navigate('/');
-      };
+
+        // Perform login validation
+
+        if (login) {
+            
+            try {
+
+                
+   
+                if (username.trim() === '') throw  new Error("*Enter the User Name Correctly");
+
+                
+    
+                if(password.trim() === '')  throw new Error("*Enter the password Correctly");
+
+                alert("login Successfully");
+                navigate('/');
+                
+            } catch (error) {
+
+                document.getElementById("loginFeild").innerText=error.message
+               
+                
+            }            
+        } else {
+
+        
+
+            try {
+
+                
+           
+                if (username.trim() === '') throw  new Error("*Enter the User Name Correctly");
+
+                if(email.trim() === '') throw new Error("*Enter the Email Correctly");
+                
+        
+                if(password.trim() === '')  throw new Error("*Enter the Password Correctly");
+
+                
+             
+              
+
+
+                alert("Register Successfully");
+                navigate('/');
+                
+            } catch (error) {
+
+                
+                document.getElementById("registerFeild").innerText=error.message
+          
+            }  
+        }
+    };
+
+    
   return (
 
     <div>
@@ -27,13 +87,16 @@ const Login = () => {
             <div class=" w-76 sm:w-96 p-6 shadow-lg bg-white rounded-md">
                 <h1 class="text-3xl block text-center font-semibold"><i class="fa-solid fa-user"></i> Login</h1>
                 <hr class="mt-3" />
+                <p id='loginFeild' className='text-red-500'></p>
                 <div class="mt-3">
-                    <label for="username" class="block text-base mb-2">Username</label>
-                    <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
+                    <label for="username" class="block text-base mb-2" >Username</label>
+                    <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" onChange={(event)=> setUsername(event.target.value) } placeholder="Enter Username..." />
+                 
                 </div>
                 <div class="mt-3">
-                    <label for="password" class="block text-base mb-2">Password</label>
-                    <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
+                    <label for="password" class="block text-base mb-2" >Password</label>
+                    <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" onChange={(event)=> setPassword(event.target.value) } placeholder="Enter Password..." />
+                   
                 </div>
                 <div class="mt-3 flex justify-between gap-4 items-center">
                     <div>
@@ -56,17 +119,21 @@ const Login = () => {
         <div class=" w-76 sm:w-96 p-6 shadow-lg bg-white rounded-md">
             <h1 class="text-3xl block text-center font-semibold"><i class="fa-solid fa-user"></i>Register</h1>
             <hr class="mt-3" />
+            <p id='registerFeild' className='text-red-500'></p>
             <div class="mt-3">
-                <label for="username" class="block text-base mb-2">Name</label>
-                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Username..." />
+                <label for="username" class="block text-base mb-2" >Name</label>
+                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" onChange={(event)=> setUsername(event.target.value) } placeholder="Enter Username..." />
+               
             </div>
             <div class="mt-3">
-                <label for="username" class="block text-base mb-2">Email</label>
-                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Email..." />
+                <label for="username" class="block text-base mb-2" >Email</label>
+                <input type="text" id="username" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" onChange={(event)=> setEmail(event.target.value) } placeholder="Enter Email..." />
+                
             </div>
             <div class="mt-3">
-                <label for="password" class="block text-base mb-2">Password</label>
-                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" placeholder="Enter Password..." />
+                <label for="password" class="block text-base mb-2" >Password</label>
+                <input type="password" id="password" class="border w-full text-base px-2 py-1 focus:outline-none focus:ring-0 focus:border-gray-600" onChange={(event)=> setPassword(event.target.value) } placeholder="Enter Password..." />
+                
             </div>
             <div class="mt-3 flex justify-between gap-4 items-center">
                 <div>

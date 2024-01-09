@@ -7,7 +7,7 @@ import {BsFilter} from "react-icons/bs"
 import $ from "jquery"
 
 
-const Womens = ({AddToCart}) => {
+const Womens = () => {
 
   useEffect(()=>{
        
@@ -31,7 +31,7 @@ const Womens = ({AddToCart}) => {
     <div className='Womencards grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 overflow-hidden  '>
       
     {
-    WomensData.map((x)=><Card Data={x} AddToCart={AddToCart}/>)
+    WomensData.map((x)=><Card Data={x} />)
     }
     
   </div>

@@ -3,7 +3,7 @@ import {React,useState} from 'react'
 import { AiOutlineMenu ,AiOutlineUser ,AiOutlineSearch ,AiOutlineHeart ,AiOutlineShoppingCart } from "react-icons/ai";
 
 import { NavLink} from "react-router-dom"
-
+import { useSelector } from 'react-redux';
 import Logo1 from "../images/Logo1.png"
 
 
@@ -18,6 +18,10 @@ import {RxCross2} from "react-icons/rx";
 
 
 export const Navbar = () => {
+
+  const cartItems = useSelector(state => state.cart.items);
+
+
  const[menu,setMenu]=useState(false);
  const[Gender,setGender]=useState(false);
 
@@ -48,7 +52,17 @@ export const Navbar = () => {
        <div className='flex  justify-between'>
        <NavLink  to="/Login"><AiOutlineUser className='text-xl mx-5 hover:text-red-500 '/> </NavLink>
        <NavLink  to="/Liked"><AiOutlineHeart   className="text-xl  mx-5 hover:text-red-500 "/></NavLink>
-       <NavLink  to="/Cart"><AiOutlineShoppingCart className="text-xl  mx-5 hover:text-red-500" /></NavLink>
+
+        <NavLink to="/Cart">
+        <div className="relative">
+          <AiOutlineShoppingCart className="text-xl mx-5 hover:text-red-500" />
+          {cartItems.length > 0 && (
+            <span className="absolute -top-1 -right-1 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center text-xs">
+              {cartItems.length}
+            </span>
+          )}
+        </div>
+      </NavLink>
        <p onClick={Handlesearch}><AiOutlineSearch  className="text-xl mx-5 hover:text-red-500"  /></p>
 
       <div onClick={handleClick}>{menu ?<RxCross2 className="text-xl mx-5 hover:text-red-500 hover:animate-spin"/>:<AiOutlineMenu  className="text-xl mx-5 hover:text-red-500 " />}
@@ -58,7 +72,7 @@ export const Navbar = () => {
       
     </nav>
     {menu ? <div className='mx-5  my-4 font-serif'>
-    <h1 ><p  onClick={handleGender} className='flex text-xl '>Gender  <SiGhostery  className=" text-sm mt-2 ml-2 hover:text-blue-500 animate-pulse"/></p>
+    <h1 ><p  onClick={handleGender} className='flex text-xl '>Category <SiGhostery  className=" text-sm mt-2 ml-2 hover:text-blue-500 animate-pulse"/></p>
     { Gender?
     <ul  >
        
